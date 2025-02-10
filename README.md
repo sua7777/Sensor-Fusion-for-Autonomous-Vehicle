@@ -4,7 +4,7 @@ Fusing data from a LiDAR and a Camera. This is an example of the output of the e
 <video width="700" controls>
   <source src="all_early_fusion.mp4" type="video/mp4">
 </video>
-
+https://github.com/user-attachments/assets/9827d750-b9a8-48b8-b198-012430361733-46e8-b143-68154dd55dca)
 
 # Sensor Fusion for Autonomous Vehicle using Lidar and Camera Sensors
 
@@ -17,10 +17,6 @@ The data here comes from RGB cameras mounted on the car (images), as well as a L
 ## What's the idea behind this?
 
 As autonomous vehicles become more mainstream, it's fun to see how they perceive the world around them. Here's a typical setup in a rig like such:
-
-https://github.com/user-attachments/assets/9827d750-b9a8-48b8-b198-012430361733
-
--46e8-b143-68154dd55dca)
 
 ![2](https://github.com/user-attachments/assets/41f6ac46-870b-4e89-93d3-09164acf64fc)
 
