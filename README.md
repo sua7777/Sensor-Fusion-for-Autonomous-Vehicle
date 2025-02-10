@@ -2,7 +2,7 @@
 Fusing data from a LiDAR and a Camera. This is an example of the output of the early fusion algorithm:
 
 <video width="700" controls>
-  <source src="all_early_fusion.mp4" type="video/mp4">
+  <source src="Desktop/LidarFusion/videos/out_3.mp4" type="video/mp4">
 </video>
 
 # Sensor Fusion for Autonomous Vehicle using Lidar and Camera Sensors
