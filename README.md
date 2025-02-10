@@ -52,12 +52,12 @@ So, This is how LiDAR sensors work:
 4.Using the time it takes (time-of-flight), LiDAR calculates the distance to the object.
 So, LiDAR uses the time it takes for light to hit something and come back to figure out how far away that thing is. This helps create detailed maps of the surroundings and is used in technologies like autonomous cars and mapping. 
 
-###Point Clouds:
+### Point Clouds:
 LiDAR generate point clouds. Point clouds are collections of points, and each point has its XYZ position. This allows us to accurately know the depth and distance of every obstacle or object in a 3D space.
 
 Let's take a look at the following video to understand more about Point Clouds, These point clouds were captured with Basler Blaze 101 Time of Flight Camera. 
 
-###Camera and LiDAR Fusion:
+### Camera and LiDAR Fusion:
 A self-driving car typically has:
 
 Multiple Cameras: These cameras have different angles and capabilities. Some can see far with a narrow view, while others have a wider view but shorter range.
@@ -70,7 +70,7 @@ So, here is the Self Driving Car Setup from [KITTI Vision Benchmark Suite](https
 
 This Self Driving Car setup has one Valodyne LiDAR (HDL-64E Laser Scanner), and a total of 4 cameras, 2 color cameras and 2 Grayscale cameras, Two cameras (Color and Gray) on left side, two cameras (Color and Gray) on right side. The sensors orientation is not the same, coordinate system is different and psition is also different. https://velodynelidar.com/blog/hdl-64e-lidar-sensor-retires/
 
-###Projecting a LiDAR Point (3D) in a Camera Image (2D)
+### Projecting a LiDAR Point (3D) in a Camera Image (2D)
 
 Considering an image, and a point cloud, and this is the output of projection!
 
@@ -89,7 +89,7 @@ Projection Formula: Here is the formula to convert a point X in 3D into a point 
 
 ![formula](https://github.com/user-attachments/assets/84b2a1b3-33d9-428d-8765-84bc3f5fc54e)
 
-#Y = P × R₀ × R|t × X
+# Y = P × R₀ × R|t × X
 
 where:
 - **X**: 3D coordinates  
@@ -99,7 +99,7 @@ where:
 
 above formula is highly dependent on our sensor setup system.
 
-###P:
+### P:
 
 A camera produces images by capturing light from the environment through its lens and converting it into a digital image. When buying a camera, it's typically pre-calibrated, meaning it's set up to produce images accurately without requiring you to adjust complex settings right away. This calibration ensures that the images you take are properly exposed and in focus.
 
@@ -109,7 +109,7 @@ Calibration is the process of teaching your camera how to translate a point in t
 
 In above matrix, f is is the focal length (fx, fy) and c is the optical center (cx, cy). This matrix is used to transform from the camera's perspective (camera frame) to the image's perspective (image frame).
 
-###R0:
+### R0:
 
 In stereo vision, the aim is to make the left and right images line up perfectly, it helps in drawing a horizontal line across them, below are the same objects aligned with each other.
 
@@ -121,7 +121,7 @@ We refer to that horizontal line as the "Epipolar Line."
 
 In Stereo Vision, the matrix R0 aligns the left and right images, making them match perfectly. This step isn't necessary with a single camera, but it's crucial for stereo vision to work correctly.
 
-###R0|t:
+### R0|t:
 
 R|t is the transformation from the Velodyne frame of reference to the Camera frame of reference. It describes how data measured in the Velodyne's coordinate system can be translated and rotated to align with the coordinate system of the Camera.
 
