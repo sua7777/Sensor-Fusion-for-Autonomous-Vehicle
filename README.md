@@ -4,7 +4,6 @@ Fusing data from a LiDAR and a Camera. This is an example of the output of the e
 <video width="700" controls>
   <source src="all_early_fusion.mp4" type="video/mp4">
 </video>
-https://github.com/user-attachments/assets/9827d750-b9a8-48b8-b198-012430361733-46e8-b143-68154dd55dca)
 
 # Sensor Fusion for Autonomous Vehicle using Lidar and Camera Sensors
 
