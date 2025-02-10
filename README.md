@@ -1,9 +1,9 @@
 
 # Sensor Fusion for Autonomous Vehicle using Lidar and Camera Sensors
 
-https://github.com/user-attachments/assets/7f0f6eb6-fb91-4a40-a286-22ee8cbc4606
-
 This project aims to combine data from two sensors, cameras (2D) and LiDAR(3D), into a real time obstacle tracking and classication model for AVs. This is based on data collected from cars fitted with cameras and Velodyne LiDAR systems, and the config files for the setup are included in this repo.
+
+https://github.com/user-attachments/assets/7f0f6eb6-fb91-4a40-a286-22ee8cbc4606
 
 ## What about the data?
 
