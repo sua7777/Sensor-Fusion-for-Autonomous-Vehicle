@@ -24,13 +24,13 @@ The results are pretty fun to see! I'm attaching a few examples below. Some usef
 https://boschresearch.github.io/multimodalperception/dataset.html
 
 Results from Part 1 (Projecting LiDAR onto Images):
-![3](https://github.com/user-attachments/assets/799d443a-9d4a-4e83-a366-0916b29d8a1d)
+![3](https://github.com/user-attachments/assets/b3fc2f69-7d22-4b8f-815c-3c690ab38353)
 
 Results from Part 2 (Drawing 3D Bounding Boxes and keeping only points of interest):
-![4](https://github.com/user-attachments/assets/3bffd27c-d485-44b8-8d9f-8e1fd404ce30)
-
+![4](https://github.com/user-attachments/assets/7c8640f2-a949-481a-9972-f401dcf5c036)
 
 Results on a highway dataset:
-![5](https://github.com/user-attachments/assets/b6f3f07c-2f92-4c54-95f8-9fbee1c7d100)
+![5](https://github.com/user-attachments/assets/43031158-bdbc-4903-8faa-ba2ad9cc87cc)
 
 As you might see, the results are pretty good!
+
