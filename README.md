@@ -50,6 +50,7 @@ So, This is how LiDAR sensors work:
 2.This light beam hits an object and bounces back.
 3.LiDAR measures how long it takes for the light to bounce back.
 4.Using the time it takes (time-of-flight), LiDAR calculates the distance to the object.
+
 So, LiDAR uses the time it takes for light to hit something and come back to figure out how far away that thing is. This helps create detailed maps of the surroundings and is used in technologies like autonomous cars and mapping. 
 
 ### Point Clouds:
