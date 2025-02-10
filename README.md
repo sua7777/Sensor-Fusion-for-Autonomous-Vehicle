@@ -1,3 +1,5 @@
+![687474703a2f2f7777772e63766c6962732e6e65742f64617461736574732f6b697474692f696d616765732f7061737361745f73656e736f72732e6a7067](https://github.com/user-attachments/assets/d447f8db-73cc
+
 # Sensor Fusion for Autonomous Vehicle using Lidar and Camera Sensors
 
 This project aims to combine data from two sensors, cameras (2D) and LiDAR(3D), into a real time obstacle tracking and classication model for AVs. This is based on data collected from cars fitted with cameras and Velodyne LiDAR systems, and the config files for the setup are included in this repo.
@@ -10,7 +12,9 @@ The data here comes from RGB cameras mounted on the car (images), as well as a L
 
 As autonomous vehicles become more mainstream, it's fun to see how they perceive the world around them. Here's a typical setup in a rig like such:
 
-![687474703a2f2f7777772e63766c6962732e6e65742f64617461736574732f6b697474692f696d616765732f7061737361745f73656e736f72732e6a7067](https://github.com/user-attachments/assets/d447f8db-73cc-46e8-b143-68154dd55dca)
+https://github.com/user-attachments/assets/9827d750-b9a8-48b8-b198-012430361733
+
+-46e8-b143-68154dd55dca)
 
 ![2](https://github.com/user-attachments/assets/41f6ac46-870b-4e89-93d3-09164acf64fc)
 
@@ -19,6 +23,65 @@ Overall, the goal is to combine the data from these sensors to make the machine 
 The challeng here is to combine 3D point clouds from the Velodyne laser scanner with the 2D images coming from the cameras.
 To solve this, the first step would be to project the points from the LiDAR scan onto the 2D pixels. The second part is then how do we take these sensors and draw 3D bounding boxes around obstacles.
 
+## Three Most Important things about Sensor Fusion
+
+In this Project, I have built my understanding around three most important things about Sensor Fusion:
+
+1. Sensors and Sensor Fusion
+2. Early Fusion
+3. Late Fusion
+
+# Early Fusion : First we fuse, then we detect
+
+### Steps :
+### 1. Project the Point Clouds (3D) to the Image (2D)
+Convert the points from the LiDAR frame to the Image frame.
+
+#Y = P × R₀ × R|t × X
+where:
+- **X**: 3D coordinates  
+- **R|t**: Rotation and translation matrix from the LiDAR to the Camera  
+- **R₀**: Stereo vision rectifier  
+- **P**: Intrinsic and extrinsic camera calibration parameters  
+
+Select the points that are visible in the image.
+
+### 2. Detect Obstacles in 2D (Camera)
+- Used a **YOLOv4** network  
+
+### 3. Fuse the Results
+- Shrink the bounding boxes  
+- Filter the outliers using **one-sigma**  
+- Retrieve the best distance using the **average**  
+
+
+# Late Fusion : First we detect, then we fuse
+
+### Steps :
+### 1. Detect Obstacles in 2D (Camera)
+- Used a **YOLOv4** network  
+
+### 2. Detect Obstacles in 3D (LiDAR)
+- **Not implemented**: Assumed to have the position **(X, Y, Z)**  
+- 3D bounding box: **(W, H, L)**  
+- Orientation of the 3D bounding box: **Rᵧ**  
+
+### 3. Project the 3D Obstacles in the Image
+- Project points from 3D to 2D  
+  - Convert to **homogeneous coordinates**  
+  - Multiply by **P** (projection matrix)  
+  - Convert to **Cartesian coordinates**  
+- Compute the **3D bounding box** in the camera frame using:  
+  **(X, Y, Z, W, H, L, Rᵧ)**  
+- Project the **3D bounding box** in the camera frame to the image  
+- Convert the **3D bounding box** to a **2D bounding box** and draw it  
+
+### 4. Fuse the 3D and 2D Bounding Boxes
+- Show the **LiDAR and Camera** boxes on the same image  
+- Compute the **IOU (Intersection Over Union)** metrics for each box  
+- Use the **Hungarian Algorithm** to match boxes based on the IOU matrix  
+- Create the **final fused objects**  
+    
 ## Results
 The results are pretty fun to see! I'm attaching a few examples below. Some useful resources for the datasets are listed in the link below.
 https://boschresearch.github.io/multimodalperception/dataset.html
