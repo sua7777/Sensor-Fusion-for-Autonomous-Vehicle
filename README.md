@@ -176,7 +176,7 @@ This is what we do in object detection, given an image and output bounding boxes
 - Use the **Hungarian Algorithm** to match boxes based on the IOU matrix  
 - Create the **final fused objects**  
     
-## Results
+# Results
 The results are pretty fun to see! I'm attaching a few examples below. Some useful resources for the datasets are listed in the link below.
 https://boschresearch.github.io/multimodalperception/dataset.html
 
