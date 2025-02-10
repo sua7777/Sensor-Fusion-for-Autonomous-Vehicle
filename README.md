@@ -1,11 +1,13 @@
 # Sensor-Fusion
 Fusing data from a LiDAR and a Camera. This is an example of the output of the early fusion algorithm:
 
-https://github.com/sua_7777/Sensor-Fusion-for-Autonomous-Vehicle/blob/main/Desktop/LidarFusion/videos/out_3.mp4
 
-<video width="700" controls>
-  <source src="Desktop/LidarFusion/videos/out_3.mp4" type="video/mp4">
-</video>
+
+https://github.com/user-attachments/assets/7f0f6eb6-fb91-4a40-a286-22ee8cbc4606
+
+
+
+
 
 # Sensor Fusion for Autonomous Vehicle using Lidar and Camera Sensors
 
